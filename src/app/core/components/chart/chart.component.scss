@@ -1,0 +1,91 @@
+$text-fill: #454545;
+
+app-chart {
+  svg {
+    text {
+      font-size: 10px;
+      font-weight: 400;
+      fill: $text-fill;
+    }
+
+    .axis {
+      .tick {
+        user-select: none;
+      }
+
+      .tick line,
+      .domain {
+        stroke-width: 1px;
+        shape-rendering: crispEdges;
+      }
+
+      &--x {
+        .tick line {
+          stroke: none;
+        }
+
+        .domain {
+          stroke: $text-fill;
+        }
+      }
+
+      &--y {
+        .tick line {
+          stroke: $text-fill;
+        }
+      }
+    }
+
+    .line {
+      fill: none;
+      stroke-width: 1.25px;
+    }
+  }
+
+  form {
+    margin: 25px 0;
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 300px;
+      height: 150px;
+    }
+  }
+
+  .image-adjustments {
+    margin-top: 10px;
+
+    .slider {
+      -webkit-appearance: none;
+      width: 50%;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+  }
+}

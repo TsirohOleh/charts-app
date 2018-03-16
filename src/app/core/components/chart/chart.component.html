@@ -1,0 +1,32 @@
+<svg #chart></svg>
+<div class="image-adjustments">
+  <div class="slidecontainer">
+    <input type="range"
+           min="1"
+           max="100"
+           value="50"
+           class="slider"
+           [(ngModel)]="sliderValue"
+           (input)="slide(value)">
+  </div>
+</div>
+<form #chartSettings (ngSubmit)="changeColor()">
+  <div>
+    <label for="data">
+      Chart data:
+      <textarea id="data" name="data" [(ngModel)]="formattedChartData"></textarea>
+    </label>
+    <button (click)="changeChartData()">change data</button>
+  </div>
+  <div>
+    <label for="color">
+      Line color:
+      <input type="text" id="color" name="color" [(ngModel)]="lineColor">
+    </label>
+  </div>
+</form>
+<div class="chart-upload">
+  Upload image to compare:
+  <input type="file" #fileInput placeholder="Upload file..." />
+  <button type="button" (click)="upload()">Upload</button>
+</div>
